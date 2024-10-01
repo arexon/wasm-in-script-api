@@ -1,0 +1,5 @@
+.direnv
+.regolith
+build
+target
+packs/data/gametests/node_modules

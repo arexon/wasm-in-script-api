@@ -1,0 +1,13 @@
+[package]
+name = "wasm-in-script-api"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+getrandom = { version = "0.2.3", features = ["custom"] }
+oxc = { version = "0.30.5", features = ["serialize"] }

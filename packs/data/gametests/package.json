@@ -1,0 +1,10 @@
+{
+    "main": "main.js",
+    "dependencies": {
+        "polywasm": "^0.1.4"
+    },
+    "devDependencies": {
+        "@minecraft/server": "1.14.0",
+        "@minecraft/server-ui": "^1.3.0"
+    }
+}

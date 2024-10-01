@@ -1,0 +1,22 @@
+{
+    "typescript": {
+        "indentWidth": 4,
+        "arrowFunction.useParentheses": "force"
+    },
+    "json": {
+        "indentWidth": 4
+    },
+    "markdown": {
+        "textWrap": "always"
+    },
+    "excludes": [
+        "packs/data/gametests/node_modules",
+        "packs/data/gametests/package-lock.json",
+        "packs/RP/models/**/*"
+    ],
+    "plugins": [
+        "https://plugins.dprint.dev/markdown-0.17.8.wasm",
+        "https://plugins.dprint.dev/typescript-0.91.6.wasm",
+        "https://plugins.dprint.dev/json-0.19.3.wasm"
+    ]
+}
