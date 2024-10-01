@@ -7,7 +7,8 @@ languages like Go, Rust, C, and C++ to name a few.
 
 ## Build instructions
 
-Make sure that you have `Rust`, `Regolith`, and `Node.js` installed.
+Make sure that you have `Rust`, `Regolith`, and `Node.js` installed. `esbuild`
+is used to embed the wasm module in the script.
 
 Build the Rust library. Target feature `multivalue` is required.
 
