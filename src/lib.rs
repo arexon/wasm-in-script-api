@@ -36,7 +36,7 @@ pub fn send_message(msg_ptr: *const u8, msg_len: usize) -> (*const u8, usize) {
 }
 
 #[no_mangle]
-pub fn run_js(code_ptr: *const u8, code_len: usize) -> (*const u8, usize) {
+pub fn parse_js(code_ptr: *const u8, code_len: usize) -> (*const u8, usize) {
     let code = JsString::from_raw(code_ptr, code_len);
 
     let allocator = Allocator::default();

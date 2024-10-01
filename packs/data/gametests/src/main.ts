@@ -20,7 +20,7 @@ globalThis.TextDecoder = TextDecoderPolyfill;
 
 interface Exports {
     item_use(eventPtr: number, eventLen: number): void;
-    run_js(codePtr: number, codeLen: number): [number, number];
+    parse_js(codePtr: number, codeLen: number): [number, number];
     send_message(msgPtr: number, msgLen: number): [number, number];
     memory: WebAssembly.Memory;
     alloc(size: number): number;
@@ -79,12 +79,12 @@ class WasmRunner {
         this.print(this.sendMessage.name, res);
     }
 
-    public runJs(code: string) {
+    public parseJs(code: string) {
         const [codePtr, codeLen] = this.writeStr(code);
 
-        const [resPtr, resLen] = this.exports.run_js(codePtr, codeLen);
+        const [resPtr, resLen] = this.exports.parse_js(codePtr, codeLen);
         const res = this.readStr(resPtr, resLen);
-        this.print(this.runJs.name, res);
+        this.print(this.parseJs.name, res);
     }
 
     private print(fn: string, msg: any) {
@@ -135,7 +135,7 @@ system.runInterval(() => {
                 .textField("Get JS AST with OXC", "", "export interface Foo { a: () => void; }")
                 .show(player);
             const code = modalRes.formValues?.[0];
-            if (code !== "") wasmRunner.runJs(code as string);
+            if (code !== "") wasmRunner.parseJs(code as string);
         }
     });
 });
